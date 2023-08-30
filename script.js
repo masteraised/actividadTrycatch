@@ -7,7 +7,7 @@ let resultado = document.getElementById('resultado');
 botonBuscador.addEventListener("click", () => {
 	//Cambia la url y hace la solicitud
 	url = "https://japceibal.github.io/emercado-api/cats_products/"+busqueda.value+".json";
-	getJson();
+	getData();
 });
 
 //Función que muestra los productos
@@ -25,7 +25,7 @@ function showData(dataArray){
 
 
 
-async function getJson () {
+async function getData () {
 	try{
 		const respuesta = await fetch(url);
 	const data = await respuesta.json();
