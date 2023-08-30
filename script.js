@@ -23,14 +23,16 @@ function showData(dataArray){
   	}
 }
 
-//Solicitud fetch
+
+
 async function getJson () {
-	const response = await fetch(url);
-	const data = await response.json();
+	try{
+		const respuesta = await fetch(url);
+	const data = await respuesta.json();
 	showData(data);
+	}
+	catch{
+		resultado.innerHTML = `<h3 class="bg-danger text-white">Categoría desconocida</h3>`;
+	}
+	
 }
-
-//Error:
-//resultado.innerHTML = `<h3 class="bg-danger text-white">Categoría desconocida</h3>`;
-
-//Usa try catch para mostrar el error cuando falle la solicitud fetch.
